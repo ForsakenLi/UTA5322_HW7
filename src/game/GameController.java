@@ -6,7 +6,9 @@ import state.GameOverState;
 import state.State;
 import util.DirectionKeyListener;
 
-public class GameController {
+import java.io.Serializable;
+
+public class GameController implements Serializable {
     private State state;
     private final MonkeyFacade monkeyFacade;
     private final BananaFacade bananaFacade;
@@ -36,13 +38,9 @@ public class GameController {
         // Controller is the client of the State class
         state = GameOverState.getInstance();
         
-        gui.getStartButton().addActionListener(e -> {
-            state = state.startBtnClicked();
-        });
+        gui.getStartButton().addActionListener(e -> state = state.startBtnClicked());
 
-        gui.getEndButton().addActionListener(e -> {
-            state = state.endBtnClicked();
-        });
+        gui.getEndButton().addActionListener(e -> state = state.endBtnClicked());
 
     }
 

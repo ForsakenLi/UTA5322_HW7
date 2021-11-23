@@ -1,6 +1,5 @@
 package game;
 
-import facade.MonkeyFacade;
 import util.OffsetUtil;
 
 import javax.swing.*;
